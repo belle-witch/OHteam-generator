@@ -1,15 +1,24 @@
 const Employee = require ('../lib/Employee.js');
+const employee = new Employee('Cecilia', '7077', 'mistresspim@gmail.com');
 
-test('creates a employee object', () => {
-    const employee = new Employee('Cecila, 70, mistresspim@gmail.com');
-
-    expect(employee.inventory).toEqual(
-        expect.arrayContaining([expect.any(Object)])
-      );
-    expect(employee.name).toBe('Cecila');
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(String));
+test('get constructor values', () => {
+    expect(employee.name).toBe('Cecilia');
+    expect(employee.id).toBe('7077');
+    expect(employee.email).toBe('mistresspim@gmail.com');
 });
 
+test('gets employee name', () => {
+    expect (employee.getName()).toBe('Cecilia');
+});
 
+test('gets employee id', () => {
+    expect (employee.getId()).toBe('7077');
+});
 
+test('gets employee email', () => {
+    expect (employee.getEmail()).toBe('mistresspim@gmail.com');
+});
+
+test('get employee role', () => {
+    expect (employee.getRole()).toBe('Employee');
+});
